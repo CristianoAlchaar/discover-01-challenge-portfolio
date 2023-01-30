@@ -1,9 +1,23 @@
+:root {
+    --body-bg-color: #22212C;
+    --text-color: #837E9F;
+    --bg-cards: #302F3D;
+    --bg-techs: #CB92B1;
+}
+
 body{
-    background-color: #22212C;
-    color: #837E9F;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
     font-family: 'Merriweather Sans', sans-serif;
     height: 100vh;
-    
+    min-width: 400px;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 400px){
+    body{
+        overflow-x: visible;
+    }
 }
 
 .flex-container{
@@ -30,9 +44,7 @@ main{
 }
 
 .small-card{
-    width: auto;
-    height: auto;
-    background-color: #302F3D;
+    background-color: var(--bg-cards);
     border-radius: 20px;
     padding: 20px;
     margin: 30px 10px;
@@ -54,37 +66,37 @@ main{
 
 #social-links ul{
     list-style-type:none;
-    vertical-align: middle;
-
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
 }
 
-#social-links li{
-    display: block;
-    width: 100%;
-    vertical-align: middle;
-}
-#social-links li i{
-    position: relative;
-    top: 5px;
-    margin-right: 15px;
-}
-
-#technologies{
+#social-links ul li{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#social-links ul li i{
+    display: flex;
+    align-items: center;
 }
 
 #technologies ul{
     margin-left: 0px;
     padding-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .technology{
     display: inline-block;
     width:100px;
     height:30px;
-    background-color: #CB92B1;
+    background-color: var(--bg-techs);
     border-radius: 30px;
     text-align: center;
     color: #000000;
@@ -136,7 +148,7 @@ main{
     background-color: #302F3D;
     border-radius: 20px;
     padding: 20px;
-    margin: 30px 10px;
+    margin: 15px 10px;
     display: none;
     flex-basis:45%;
 }
@@ -151,9 +163,21 @@ main{
     padding: 10px;
 }
 
+@media only screen and (max-width: 1000px){
+    #main-posts{
+        flex-direction: column;   
+    }
+
+    #main-posts img{
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
 .post{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 footer{
